@@ -1,4 +1,6 @@
 <style>
+
+
 /* Force CSS block parsing */
 .teacher-note::before {
     content: "";
@@ -7,10 +9,10 @@
 
 /* Teacher Notes */
 .teacher-note {
-    border: 3px dashed #fd7f91;
+    border: 3px dashed #2a2a37;
     font-size: 14px;
-    color: #000000;
-    background-color: #ffe8ec;
+    color: #dcd7ba;
+    background-color: #1f1f28;
     padding: 10px;
     border-radius: 5px;
     line-height: 1.5;
@@ -18,11 +20,11 @@
 .teacher-note ol, .teacher-note ul, .teacher-note li {
     margin-top: 5px;
     padding-left: 20px;
-    color: #000000;
+    color: #dcd7ba;
 }
 .teacher-note code {
-    color: #000000;
-    background-color: #ffd3da;
+    color: #dcd7ba;
+    background-color: #1f1f28;
 }
 
 /* Discussion Question */
