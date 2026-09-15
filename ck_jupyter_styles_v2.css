@@ -7,6 +7,11 @@
     display: none;
 }
 
+/* Johnny's Material Theme from Kanagawa.nvim */
+.kanagawa {
+    border: 3px solid #223249;
+}
+
 /* Teacher Notes */
 .teacher-note {
     border: 3px dashed #2a2a37;
