@@ -15,8 +15,13 @@
 
 .kanagawa {
     border: 3px solid #223249;
+    border-radius: 12px;
+    padding: 8px;
+    line-height: 1.5;
     color: #c8c093;
-    background: #16161d;
+    background-color: #16161d;
+    font-size: 18px;
+    font-family: verdana;
 }
 
 /* Teacher Notes */
