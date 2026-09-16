@@ -1,9 +1,9 @@
 :root {
     /* layers, borders, text */
-    --jp-layout-color0: var(--surface);
+    --jp-layout-color0: var(--super);
     --jp-layout-color1: var(--surface);
-    --jp-layout-color2: var(--container);
-    --jp-layout-color3: var(--border);
+    --jp-layout-color2: var(--secondary);
+    --jp-layout-color3: var(--tertiary);
     --jp-layout-color4: var(--border);
     --jp-inverse-layout-color0: var(--on-surface);
     --jp-inverse-layout-color1: var(--on-surface);
