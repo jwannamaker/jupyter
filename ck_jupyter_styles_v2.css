@@ -1,114 +1,152 @@
 <style>
+:root {
+  /* Deep Sea roles */
+  --ds-surface: #16161D;  --ds-container: #223249;  --ds-primary: #7FB4CA;
+  --ds-secondary: #7AA89F; --ds-accent: #E6C384;    --ds-on-surface: #C8C093;
+  --ds-border: #2D4F67;   --ds-muted: #727169;      --ds-error: #E46876;  --ds-error-bg: #43242B;
 
+  /* layers, borders, text */
+  --jp-layout-color0: var(--ds-surface);   --jp-layout-color1: var(--ds-surface);
+  --jp-layout-color2: var(--ds-container); --jp-layout-color3: var(--ds-border);  --jp-layout-color4: var(--ds-border);
+  --jp-inverse-layout-color0: var(--ds-on-surface); --jp-inverse-layout-color1: var(--ds-on-surface);
+  --jp-inverse-layout-color2: var(--ds-on-surface); --jp-inverse-layout-color3: var(--ds-muted);
+  --jp-inverse-layout-color4: var(--ds-muted);
+  --jp-border-color0: var(--ds-border); --jp-border-color1: var(--ds-border);
+  --jp-border-color2: var(--ds-container); --jp-border-color3: var(--ds-container);
+  --jp-ui-font-color0: var(--ds-on-surface); --jp-ui-font-color1: var(--ds-on-surface);
+  --jp-ui-font-color2: var(--ds-muted);      --jp-ui-font-color3: var(--ds-muted);
+  --jp-ui-inverse-font-color0: var(--ds-surface); --jp-ui-inverse-font-color1: var(--ds-surface);
+  --jp-ui-inverse-font-color2: var(--ds-container); --jp-ui-inverse-font-color3: var(--ds-container);
+  --jp-content-font-color0: var(--ds-on-surface); --jp-content-font-color1: var(--ds-on-surface);
+  --jp-content-font-color2: var(--ds-muted);      --jp-content-font-color3: var(--ds-muted);
+  --jp-content-link-color: var(--ds-primary);
 
-/* Force CSS block parsing */
-.teacher-note::before {
-    content: "";
-    display: none;
-}
+  /* brand, accent, status colors */
+  --jp-brand-color0: var(--ds-primary); --jp-brand-color1: var(--ds-primary);
+  --jp-brand-color2: var(--ds-primary); --jp-brand-color3: var(--ds-container); --jp-brand-color4: var(--ds-container);
+  --jp-accent-color0: var(--ds-accent); --jp-accent-color1: var(--ds-accent);
+  --jp-accent-color2: var(--ds-container); --jp-accent-color3: var(--ds-container);
+  --jp-warn-color0: var(--ds-accent); --jp-warn-color1: var(--ds-accent);
+  --jp-warn-color2: var(--ds-container); --jp-warn-color3: var(--ds-container);
+  --jp-error-color0: var(--ds-error); --jp-error-color1: var(--ds-error);
+  --jp-error-color2: var(--ds-error-bg); --jp-error-color3: var(--ds-error-bg);
+  --jp-success-color0: var(--ds-secondary); --jp-success-color1: var(--ds-secondary);
+  --jp-success-color2: var(--ds-container); --jp-success-color3: var(--ds-container);
+  --jp-info-color0: var(--ds-primary); --jp-info-color1: var(--ds-primary);
+  --jp-info-color2: var(--ds-container); --jp-info-color3: var(--ds-container);
 
-/* Johnny's Material Theme from Kanagawa.nvim */
-.kanagawa::before {
-    content: "";
-    display: none;
-}
+  /* cells, prompts, outputs */
+  --jp-cell-editor-background: var(--ds-surface);  --jp-cell-editor-active-background: var(--ds-surface);
+  --jp-cell-editor-border-color: var(--ds-border); --jp-cell-editor-active-border-color: var(--ds-primary);
+  --jp-cell-inprompt-font-color: var(--ds-primary); --jp-cell-outprompt-font-color: var(--ds-secondary);
+  --jp-cell-prompt-not-active-font-color: var(--ds-muted);
+  --jp-notebook-multiselected-color: var(--ds-container);
+  --jp-rendermime-error-background: var(--ds-error-bg);
+  --jp-rendermime-table-row-background: var(--ds-surface);
+  --jp-rendermime-table-row-hover-background: var(--ds-border);
 
-.kanagawa {
-    border: 3px solid #223249;
-    border-radius: 12px;
-    padding: 8px;
-    line-height: 1.5;
-    color: #c8c093;
-    background-color: #16161d;
-    font-size: 18px;
-    font-family: verdana;
-}
+  /* toolbars, dialogs, inputs, scrollbars */
+  --jp-toolbar-background: var(--ds-container); --jp-toolbar-border-color: var(--ds-border);
+  --jp-toolbar-active-background: var(--ds-border);
+  --jp-dialog-background: var(--ds-surface);
+  --jp-input-background: var(--ds-surface); --jp-input-hover-background: var(--ds-container);
+  --jp-input-active-background: var(--ds-container);
+  --jp-input-border-color: var(--ds-border); --jp-input-active-border-color: var(--ds-primary);
+  --jp-scrollbar-background-color: var(--ds-surface); --jp-scrollbar-thumb-color: var(--ds-border);
 
-/* Teacher Notes */
-.teacher-note {
-    border: 3px dashed #2a2a37;
-    font-size: 14px;
-    color: #dcd7ba;
-    background-color: #1f1f28;
-    padding: 10px;
-    border-radius: 5px;
-    line-height: 1.5;
-}
-.teacher-note ol, .teacher-note ul, .teacher-note li {
-    margin-top: 5px;
-    padding-left: 20px;
-    color: #dcd7ba;
-}
-.teacher-note code {
-    color: #dcd7ba;
-    background-color: #1f1f28;
-}
+  /* editor selection, cursor, search */
+  --jp-editor-selected-background: var(--ds-container);
+  --jp-editor-selected-focused-background: var(--ds-border);
+  --jp-editor-cursor-color: var(--ds-accent);
+  --jp-search-selected-match-background-color: var(--ds-accent);
+  --jp-search-selected-match-color: var(--ds-surface);
+  --jp-search-unselected-match-background-color: var(--ds-container);
+  --jp-search-unselected-match-color: var(--ds-on-surface);
 
-/* Discussion Question */
-.discussion-question {
-    border: 3px solid #a88bd4;
-    font-size: 14px;
-    color: #000000;
-    background-color: #eee8f6;
-    padding: 10px;
-    border-radius: 5px;
-    line-height: 1.5;
-}
-.discussion-question h3 {
-    margin: 0; /* Remove top and bottom margin */
-    padding: 0; /* Ensure no padding is applied */
-}
-.discussion-question h3:first-child {
-    margin-top: 0 !important;
-}
-.discussion-question code {
-    color: #000000;
-    background-color: #e0d5ef;
-}
-
-/* Guided Notes */
-.guided-notes {
-    border: 3px solid #708a89;
-    font-size: 14px;
-    color: #000000;
-    background-color: #f1f8f8;
-    padding: 10px;
-    border-radius: 5px;
-    line-height: 1.5;
-}
-.guided-notes h3 {
-    margin: 0;
-    padding: 0;
-    color: #000000;
-}
-.guided-notes h3:first-child, .discussion-question h3:first-child {
-    margin-top: 0 !important;
-}
-.guided-notes ol, .guided-notes ul, .guided-notes li {
-    margin-top: 5px;
-    padding-left: 20px;
-    color: #000000;
-}
-.guided-notes code {
-    color: #000000;
-    background-color: #dceeed;
+  /* syntax colors */
+  --jp-mirror-editor-keyword-color: var(--ds-accent);    --jp-mirror-editor-atom-color: var(--ds-accent);
+  --jp-mirror-editor-number-color: var(--ds-accent);     --jp-mirror-editor-string-color: var(--ds-secondary);
+  --jp-mirror-editor-string-2-color: var(--ds-secondary); --jp-mirror-editor-def-color: var(--ds-primary);
+  --jp-mirror-editor-builtin-color: var(--ds-primary);   --jp-mirror-editor-property-color: var(--ds-primary);
+  --jp-mirror-editor-variable-color: var(--ds-on-surface); --jp-mirror-editor-variable-2-color: var(--ds-primary);
+  --jp-mirror-editor-variable-3-color: var(--ds-secondary); --jp-mirror-editor-operator-color: var(--ds-accent);
+  --jp-mirror-editor-punctuation-color: var(--ds-on-surface); --jp-mirror-editor-bracket-color: var(--ds-on-surface);
+  --jp-mirror-editor-comment-color: var(--ds-muted);     --jp-mirror-editor-meta-color: var(--ds-secondary);
+  --jp-mirror-editor-qualifier-color: var(--ds-secondary); --jp-mirror-editor-tag-color: var(--ds-primary);
+  --jp-mirror-editor-attribute-color: var(--ds-accent);  --jp-mirror-editor-header-color: var(--ds-accent);
+  --jp-mirror-editor-quote-color: var(--ds-secondary);   --jp-mirror-editor-link-color: var(--ds-primary);
+  --jp-mirror-editor-error-color: var(--ds-error);
 }
 
-/* Adjust line spacing for Level 3 headings */
-.rendered_html h3 {
-    font-size: 128.6%;
-    margin: 1.55em 0 0 0;
-    font-weight: bold;
-    line-height: 1.5;
-}
-.guided-notes h3,
-.discussion-question h3,
-.teacher-note h3 {
-    font-size: 1.15em !important; /* ~16px relative to 14px container */
-    margin: 0 !important;
-    padding: 0 !important;
-    font-weight: bold;
-    line-height: 1.5;
-    color: #000000;
-}
+/* page and whole-app backgrounds */
+html, body, #notebook, #notebook-container, .container, #site, .jp-LabShell, .jp-NotebookPanel-notebook {
+  background: var(--ds-surface) !important; color: var(--ds-on-surface) !important; }
+::selection { background: var(--ds-border); color: var(--ds-on-surface); }
+* { scrollbar-color: var(--ds-border) var(--ds-surface); }
+::-webkit-scrollbar { background: var(--ds-surface); }
+::-webkit-scrollbar-thumb { background: var(--ds-border); border-radius: 6px; }
+
+/* classic Notebook header, menus, toolbar, buttons */
+#header, #header-container, .navbar-default, #menubar, #maintoolbar, .dropdown-menu, .modal-content {
+  background: var(--ds-container) !important; color: var(--ds-on-surface) !important; border-color: var(--ds-border) !important; }
+.dropdown-menu > li > a, .navbar-default .navbar-nav > li > a { color: var(--ds-on-surface) !important; }
+.dropdown-menu > li > a:hover { background: var(--ds-border) !important; }
+.btn, .btn-default, select, input, textarea, .form-control {
+  background: var(--ds-surface) !important; color: var(--ds-on-surface) !important; border-color: var(--ds-border) !important; }
+.btn:hover, .btn-default:hover { background: var(--ds-border) !important; }
+
+/* JupyterLab buttons */
+.jp-Button.jp-mod-accept, .jp-mod-styled.jp-mod-accept { background: var(--ds-primary) !important; color: var(--ds-surface) !important; }
+
+/* cells, selection bars, prompts */
+div.cell.selected, div.cell.jupyter-soft-selected { border-color: var(--ds-primary) !important; background: var(--ds-surface) !important; }
+div.cell.selected::before, .jp-Collapser.jp-mod-active { background: var(--ds-primary) !important; }
+div.prompt.input_prompt { color: var(--ds-primary) !important; }
+div.prompt.output_prompt { color: var(--ds-secondary) !important; }
+.cm-editor, .CodeMirror, div.input_area, .jp-InputArea-editor {
+  background: var(--ds-surface) !important; color: var(--ds-on-surface) !important; border-color: var(--ds-border) !important; }
+.cm-cursor, .CodeMirror-cursor { border-left-color: var(--ds-accent) !important; }
+.cm-activeLine, .CodeMirror-activeline-background { background: var(--ds-container) !important; }
+.cm-gutters, .CodeMirror-gutters { background: var(--ds-surface) !important; border-color: var(--ds-border) !important; }
+.cm-lineNumbers, .CodeMirror-linenumber { color: var(--ds-muted) !important; }
+
+/* classic Notebook syntax colors */
+.cm-s-ipython .cm-keyword, .cm-s-ipython .cm-number, .cm-s-ipython .cm-atom, .cm-s-ipython .cm-operator { color: var(--ds-accent) !important; }
+.cm-s-ipython .cm-string, .cm-s-ipython .cm-string-2, .cm-s-ipython .cm-meta { color: var(--ds-secondary) !important; }
+.cm-s-ipython .cm-def, .cm-s-ipython .cm-builtin, .cm-s-ipython .cm-property, .cm-s-ipython .cm-variable-2 { color: var(--ds-primary) !important; }
+.cm-s-ipython .cm-variable, .cm-s-ipython .cm-bracket { color: var(--ds-on-surface) !important; }
+.cm-s-ipython .cm-comment { color: var(--ds-muted) !important; }
+.cm-s-ipython .cm-error { color: var(--ds-error) !important; }
+
+/* outputs: plain text, warnings, errors */
+.jp-OutputArea-output pre, .output_area pre, .output_text { color: var(--ds-on-surface) !important; }
+.jp-OutputArea-output[data-mime-type='application/vnd.jupyter.stderr'], div.output_stderr {
+  background: var(--ds-error-bg) !important; color: var(--ds-accent) !important; }
+.jp-RenderedText[data-mime-type='application/vnd.jupyter.stderr'] pre, div.output_stderr pre { color: var(--ds-accent) !important; }
+
+/* markdown cells */
+.jp-RenderedHTMLCommon, .rendered_html { color: var(--ds-on-surface) !important; }
+.jp-RenderedHTMLCommon h1, .jp-RenderedHTMLCommon h2, .jp-RenderedHTMLCommon h3,
+.jp-RenderedHTMLCommon h4, .jp-RenderedHTMLCommon h5, .jp-RenderedHTMLCommon h6,
+.rendered_html h1, .rendered_html h2, .rendered_html h3, .rendered_html h4, .rendered_html h5, .rendered_html h6 {
+  color: var(--ds-accent) !important; }
+.jp-RenderedHTMLCommon a, .rendered_html a { color: var(--ds-primary) !important; }
+.jp-RenderedHTMLCommon code, .rendered_html code { background: var(--ds-container) !important; color: var(--ds-secondary) !important; }
+.jp-RenderedHTMLCommon pre, .rendered_html pre { background: var(--ds-surface) !important; border: 1px solid var(--ds-border); }
+.jp-RenderedHTMLCommon pre code, .rendered_html pre code { background: transparent !important; color: var(--ds-on-surface) !important; }
+.jp-RenderedHTMLCommon blockquote, .rendered_html blockquote {
+  background: var(--ds-container) !important; border-left: 4px solid var(--ds-secondary) !important; color: var(--ds-on-surface) !important; }
+.jp-RenderedHTMLCommon hr, .rendered_html hr { border-color: var(--ds-border) !important; }
+
+/* data frame tables */
+.jp-RenderedHTMLCommon table, .rendered_html table {
+  background: var(--ds-surface) !important; color: var(--ds-on-surface) !important; border: 1px solid var(--ds-border) !important; }
+.jp-RenderedHTMLCommon caption, .rendered_html caption { color: var(--ds-muted) !important; }
+.jp-RenderedHTMLCommon thead th, .rendered_html thead th {
+  background: var(--ds-surface) !important; color: var(--ds-on-surface) !important; border-bottom: 1px solid var(--ds-border) !important; }
+.jp-RenderedHTMLCommon tbody th, .rendered_html tbody th { background: transparent !important; color: var(--ds-accent) !important; }
+.jp-RenderedHTMLCommon td, .jp-RenderedHTMLCommon th, .rendered_html td, .rendered_html th { border-color: var(--ds-border) !important; }
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd),  .rendered_html tbody tr:nth-child(odd)  { background: var(--ds-surface) !important; }
+.jp-RenderedHTMLCommon tbody tr:nth-child(even), .rendered_html tbody tr:nth-child(even) { background: var(--ds-container) !important; }
+.jp-RenderedHTMLCommon tbody tr:hover, .rendered_html tbody tr:hover { background: var(--ds-border) !important; }
 </style>
