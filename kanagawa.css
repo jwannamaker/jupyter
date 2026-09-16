@@ -1,0 +1,399 @@
+:root {
+    /* layers, borders, text */
+    --jp-layout-color0: var(--surface);
+    --jp-layout-color1: var(--surface);
+    --jp-layout-color2: var(--container);
+    --jp-layout-color3: var(--border);
+    --jp-layout-color4: var(--border);
+    --jp-inverse-layout-color0: var(--on-surface);
+    --jp-inverse-layout-color1: var(--on-surface);
+    --jp-inverse-layout-color2: var(--on-surface);
+    --jp-inverse-layout-color3: var(--muted);
+    --jp-inverse-layout-color4: var(--muted);
+    --jp-border-color0: var(--border);
+    --jp-border-color1: var(--border);
+    --jp-border-color2: var(--container);
+    --jp-border-color3: var(--container);
+    --jp-ui-font-color0: var(--on-surface);
+    --jp-ui-font-color1: var(--on-surface);
+    --jp-ui-font-color2: var(--muted);
+    --jp-ui-font-color3: var(--muted);
+    --jp-ui-inverse-font-color0: var(--surface);
+    --jp-ui-inverse-font-color1: var(--surface);
+    --jp-ui-inverse-font-color2: var(--container);
+    --jp-ui-inverse-font-color3: var(--container);
+    --jp-content-font-color0: var(--on-surface);
+    --jp-content-font-color1: var(--on-surface);
+    --jp-content-font-color2: var(--muted);
+    --jp-content-font-color3: var(--muted);
+    --jp-content-link-color: var(--primary);
+
+    /* brand, accent, status colors */
+    --jp-brand-color0: var(--primary);
+    --jp-brand-color1: var(--primary);
+    --jp-brand-color2: var(--primary);
+    --jp-brand-color3: var(--container);
+    --jp-brand-color4: var(--container);
+    --jp-accent-color0: var(--accent);
+    --jp-accent-color1: var(--accent);
+    --jp-accent-color2: var(--container);
+    --jp-accent-color3: var(--container);
+    --jp-warn-color0: var(--accent);
+    --jp-warn-color1: var(--accent);
+    --jp-warn-color2: var(--container);
+    --jp-warn-color3: var(--container);
+    --jp-error-color0: var(--error);
+    --jp-error-color1: var(--error);
+    --jp-error-color2: var(--error-bg);
+    --jp-error-color3: var(--error-bg);
+    --jp-success-color0: var(--secondary);
+    --jp-success-color1: var(--secondary);
+    --jp-success-color2: var(--container);
+    --jp-success-color3: var(--container);
+    --jp-info-color0: var(--primary);
+    --jp-info-color1: var(--primary);
+    --jp-info-color2: var(--container);
+    --jp-info-color3: var(--container);
+
+    /* cells, prompts, outputs */
+    --jp-cell-editor-background: var(--surface);
+    --jp-cell-editor-active-background: var(--surface);
+    --jp-cell-editor-border-color: var(--border);
+    --jp-cell-editor-active-border-color: var(--primary);
+    --jp-cell-inprompt-font-color: var(--primary);
+    --jp-cell-outprompt-font-color: var(--secondary);
+    --jp-cell-prompt-not-active-font-color: var(--muted);
+    --jp-notebook-multiselected-color: var(--container);
+    --jp-rendermime-error-background: var(--error-bg);
+    --jp-rendermime-table-row-background: var(--surface);
+    --jp-rendermime-table-row-hover-background: var(--border);
+
+    /* toolbars, dialogs, inputs, scrollbars */
+    --jp-toolbar-background: var(--container);
+    --jp-toolbar-border-color: var(--border);
+    --jp-toolbar-active-background: var(--border);
+    --jp-dialog-background: var(--surface);
+    --jp-input-background: var(--surface);
+    --jp-input-hover-background: var(--container);
+    --jp-input-active-background: var(--container);
+    --jp-input-border-color: var(--border);
+    --jp-input-active-border-color: var(--primary);
+    --jp-scrollbar-background-color: var(--surface);
+    --jp-scrollbar-thumb-color: var(--border);
+
+    /* editor selection, cursor, search */
+    --jp-editor-selected-background: var(--container);
+    --jp-editor-selected-focused-background: var(--border);
+    --jp-editor-cursor-color: var(--accent);
+    --jp-search-selected-match-background-color: var(--accent);
+    --jp-search-selected-match-color: var(--surface);
+    --jp-search-unselected-match-background-color: var(--container);
+    --jp-search-unselected-match-color: var(--on-surface);
+
+    /* syntax colors */
+    --jp-mirror-editor-keyword-color: var(--accent);
+    --jp-mirror-editor-atom-color: var(--accent);
+    --jp-mirror-editor-number-color: var(--accent);
+    --jp-mirror-editor-string-color: var(--secondary);
+    --jp-mirror-editor-string-2-color: var(--secondary);
+    --jp-mirror-editor-def-color: var(--primary);
+    --jp-mirror-editor-builtin-color: var(--primary);
+    --jp-mirror-editor-property-color: var(--primary);
+    --jp-mirror-editor-variable-color: var(--on-surface);
+    --jp-mirror-editor-variable-2-color: var(--primary);
+    --jp-mirror-editor-variable-3-color: var(--secondary);
+    --jp-mirror-editor-operator-color: var(--accent);
+    --jp-mirror-editor-punctuation-color: var(--on-surface);
+    --jp-mirror-editor-bracket-color: var(--on-surface);
+    --jp-mirror-editor-comment-color: var(--muted);
+    --jp-mirror-editor-meta-color: var(--secondary);
+    --jp-mirror-editor-qualifier-color: var(--secondary);
+    --jp-mirror-editor-tag-color: var(--primary);
+    --jp-mirror-editor-attribute-color: var(--accent);
+    --jp-mirror-editor-header-color: var(--accent);
+    --jp-mirror-editor-quote-color: var(--secondary);
+    --jp-mirror-editor-link-color: var(--primary);
+    --jp-mirror-editor-error-color: var(--error);
+}
+
+/* page and whole-app backgrounds */
+html,
+body,
+#notebook,
+#notebook-container,
+.container,
+#site,
+.jp-LabShell,
+.jp-NotebookPanel-notebook {
+    background: var(--surface) !important;
+    color: var(--on-surface) !important;
+}
+
+::selection {
+    background: var(--border);
+    color: var(--on-surface);
+}
+
+* {
+    scrollbar-color: var(--border) var(--surface);
+}
+
+::-webkit-scrollbar {
+    background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 6px;
+}
+
+/* classic Notebook header, menus, toolbar, buttons */
+#header,
+#header-container,
+.navbar-default,
+#menubar,
+#maintoolbar,
+.dropdown-menu,
+.modal-content {
+    background: var(--container) !important;
+    color: var(--on-surface) !important;
+    border-color: var(--border) !important;
+}
+
+.dropdown-menu>li>a,
+.navbar-default .navbar-nav>li>a {
+    color: var(--on-surface) !important;
+}
+
+.dropdown-menu>li>a:hover {
+    background: var(--border) !important;
+}
+
+.btn,
+.btn-default,
+select,
+input,
+textarea,
+.form-control {
+    background: var(--surface) !important;
+    color: var(--on-surface) !important;
+    border-color: var(--border) !important;
+}
+
+.btn:hover,
+.btn-default:hover {
+    background: var(--border) !important;
+}
+
+/* JupyterLab buttons */
+.jp-Button.jp-mod-accept,
+.jp-mod-styled.jp-mod-accept {
+    background: var(--primary) !important;
+    color: var(--surface) !important;
+}
+
+/* cells, selection bars, prompts */
+div.cell.selected,
+div.cell.jupyter-soft-selected {
+    border-color: var(--primary) !important;
+    background: var(--surface) !important;
+}
+
+div.cell.selected::before,
+.jp-Collapser.jp-mod-active {
+    background: var(--primary) !important;
+}
+
+div.prompt.input_prompt {
+    color: var(--primary) !important;
+}
+
+div.prompt.output_prompt {
+    color: var(--secondary) !important;
+}
+
+.cm-editor,
+.CodeMirror,
+div.input_area,
+.jp-InputArea-editor {
+    background: var(--surface) !important;
+    color: var(--on-surface) !important;
+    border-color: var(--border) !important;
+}
+
+.cm-cursor,
+.CodeMirror-cursor {
+    border-left-color: var(--accent) !important;
+}
+
+.cm-activeLine,
+.CodeMirror-activeline-background {
+    background: var(--container) !important;
+}
+
+.cm-gutters,
+.CodeMirror-gutters {
+    background: var(--surface) !important;
+    border-color: var(--border) !important;
+}
+
+.cm-lineNumbers,
+.CodeMirror-linenumber {
+    color: var(--muted) !important;
+}
+
+/* classic Notebook syntax colors */
+.cm-s-ipython .cm-keyword,
+.cm-s-ipython .cm-number,
+.cm-s-ipython .cm-atom,
+.cm-s-ipython .cm-operator {
+    color: var(--accent) !important;
+}
+
+.cm-s-ipython .cm-string,
+.cm-s-ipython .cm-string-2,
+.cm-s-ipython .cm-meta {
+    color: var(--secondary) !important;
+}
+
+.cm-s-ipython .cm-def,
+.cm-s-ipython .cm-builtin,
+.cm-s-ipython .cm-property,
+.cm-s-ipython .cm-variable-2 {
+    color: var(--primary) !important;
+}
+
+.cm-s-ipython .cm-variable,
+.cm-s-ipython .cm-bracket {
+    color: var(--on-surface) !important;
+}
+
+.cm-s-ipython .cm-comment {
+    color: var(--muted) !important;
+}
+
+.cm-s-ipython .cm-error {
+    color: var(--error) !important;
+}
+
+/* outputs: plain text, warnings, errors */
+.jp-OutputArea-output pre,
+.output_area pre,
+.output_text {
+    color: var(--on-surface) !important;
+}
+
+.jp-OutputArea-output[data-mime-type='application/vnd.jupyter.stderr'],
+div.output_stderr {
+    background: var(--error-bg) !important;
+    color: var(--accent) !important;
+}
+
+.jp-RenderedText[data-mime-type='application/vnd.jupyter.stderr'] pre,
+div.output_stderr pre {
+    color: var(--accent) !important;
+}
+
+/* markdown cells */
+.jp-RenderedHTMLCommon,
+.rendered_html {
+    color: var(--on-surface) !important;
+}
+
+.jp-RenderedHTMLCommon h1,
+.jp-RenderedHTMLCommon h2,
+.jp-RenderedHTMLCommon h3,
+.jp-RenderedHTMLCommon h4,
+.jp-RenderedHTMLCommon h5,
+.jp-RenderedHTMLCommon h6,
+.rendered_html h1,
+.rendered_html h2,
+.rendered_html h3,
+.rendered_html h4,
+.rendered_html h5,
+.rendered_html h6 {
+    color: var(--accent) !important;
+}
+
+.jp-RenderedHTMLCommon a,
+.rendered_html a {
+    color: var(--primary) !important;
+}
+
+.jp-RenderedHTMLCommon code,
+.rendered_html code {
+    background: var(--container) !important;
+    color: var(--secondary) !important;
+}
+
+.jp-RenderedHTMLCommon pre,
+.rendered_html pre {
+    background: var(--surface) !important;
+    border: 1px solid var(--border);
+}
+
+.jp-RenderedHTMLCommon pre code,
+.rendered_html pre code {
+    background: transparent !important;
+    color: var(--on-surface) !important;
+}
+
+.jp-RenderedHTMLCommon blockquote,
+.rendered_html blockquote {
+    background: var(--container) !important;
+    border-left: 4px solid var(--secondary) !important;
+    color: var(--on-surface) !important;
+}
+
+.jp-RenderedHTMLCommon hr,
+.rendered_html hr {
+    border-color: var(--border) !important;
+}
+
+/* data frame tables */
+.jp-RenderedHTMLCommon table,
+.rendered_html table {
+    background: var(--surface) !important;
+    color: var(--on-surface) !important;
+    border: 1px solid var(--border) !important;
+}
+
+.jp-RenderedHTMLCommon caption,
+.rendered_html caption {
+    color: var(--muted) !important;
+}
+
+.jp-RenderedHTMLCommon thead th,
+.rendered_html thead th {
+    background: var(--surface) !important;
+    color: var(--on-surface) !important;
+    border-bottom: 1px solid var(--border) !important;
+}
+
+.jp-RenderedHTMLCommon tbody th,
+.rendered_html tbody th {
+    background: transparent !important;
+    color: var(--accent) !important;
+}
+
+.jp-RenderedHTMLCommon td,
+.jp-RenderedHTMLCommon th,
+.rendered_html td,
+.rendered_html th {
+    border-color: var(--border) !important;
+}
+
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
+.rendered_html tbody tr:nth-child(odd) {
+    background: var(--surface) !important;
+}
+
+.jp-RenderedHTMLCommon tbody tr:nth-child(even),
+.rendered_html tbody tr:nth-child(even) {
+    background: var(--container) !important;
+}
+
+.jp-RenderedHTMLCommon tbody tr:hover,
+.rendered_html tbody tr:hover {
+    background: var(--border) !important;
+}
